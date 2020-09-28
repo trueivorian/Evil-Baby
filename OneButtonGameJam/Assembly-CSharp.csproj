@@ -58,6 +58,9 @@
     <Compile Include="Assets\Scripts\Scene Managers\FightManager.cs" />
     <Compile Include="Assets\Scripts\ButtonSelect.cs" />
     <Compile Include="Assets\Scripts\Item.cs" />
+    <Compile Include="Assets\Scripts\LightningRattle.cs" />
+    <Compile Include="Assets\Scripts\SonicDummy.cs" />
+    <Compile Include="Assets\Scripts\DiaperODeath.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

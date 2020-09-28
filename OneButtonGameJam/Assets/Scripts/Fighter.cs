@@ -10,8 +10,11 @@ public abstract class Fighter : MonoBehaviour
     private float accuracy;
     private float defence;
     private float health;
+    private readonly float criticalHitFactor = 2.0f;
 
     private Fighter.Emotion emotion = Fighter.Emotion.neutral;
+
+    private GameObject activeItem;
 
     public GameObject[] items;
 
@@ -28,6 +31,60 @@ public abstract class Fighter : MonoBehaviour
         health = _health;
 
         items = new GameObject[3];
-        //items[0] = 
+    }
+
+    public float GetDefence()
+    {
+        return defence;
+    }
+
+    private float CalculateItemDamage(float attack, float itemDamage)
+    {
+        return Mathf.Max(((attack + itemDamage) / 2.0f), itemDamage);
+    }
+
+    public void GiveDamage(Fighter target)
+    {
+        float randomNumber = Random.Range(0.0f, 1.0f);
+
+        if (randomNumber < (93.75f / 100)) // 6.25% chance of a critical hit
+        {
+            target.TakeDamage(criticalHitFactor * ((attack * attack) / (attack + target.GetDefence())));
+        }
+        else if (randomNumber < (accuracy / 100)) // accuracy% chance of a hit
+        {
+            target.TakeDamage((attack * attack) / (attack + target.GetDefence()));
+        }
+        else
+        {
+            // Miss
+        }
+    }
+
+    public void GiveItemDamage(Fighter target)
+    {
+        Item item = activeItem.GetComponent<Item>();
+
+        float itemDamage = CalculateItemDamage(attack, item.GetDamage());
+
+        float randomNumber = Random.Range(0.0f, 1.0f);
+
+        if (randomNumber < (93.75f / 100.0f)) // 6.25% chance of a critical hit
+        {
+            target.TakeDamage(criticalHitFactor * ((itemDamage * itemDamage) / (itemDamage + target.GetDefence())));
+        }
+        else if (randomNumber < (accuracy / 100.0f)) // accuracy% chance of a hit
+        {
+            target.TakeDamage((itemDamage * itemDamage) / (itemDamage + target.GetDefence()));
+        }
+        else
+        {
+            // Miss
+        }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health = Mathf.Max(health - damage, 0);
     }
 }
