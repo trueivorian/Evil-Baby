@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - DialoguePanel
+  - Option1
+  - Option2
   layers:
   - Default
   - TransparentFX

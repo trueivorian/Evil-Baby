@@ -12,23 +12,21 @@ public abstract class Fighter : MonoBehaviour
     private float health;
     private readonly float criticalHitFactor = 2.0f;
 
+    private string fighterName;
+
     private Fighter.Emotion emotion = Fighter.Emotion.neutral;
 
     private GameObject activeItem;
 
     public GameObject[] items;
 
-    public void StartFighter()
-    {
-        StartFighter(5.0f, 5.0f, 5.0f, 100.0f);
-    }
-
-    public void StartFighter(float _attack, float _accuracy, float _defence, float _health)
+    public void StartFighter(float _attack, float _accuracy, float _defence, float _health, string _name)
     {
         attack = _attack;
         accuracy = _attack;
         defence = _defence;
         health = _health;
+        fighterName = _name;
 
         items = new GameObject[3];
     }
@@ -81,6 +79,11 @@ public abstract class Fighter : MonoBehaviour
         {
             // Miss
         }
+    }
+
+    public string GetFighterName()
+    {
+        return fighterName;
     }
 
     public void TakeDamage(float damage)

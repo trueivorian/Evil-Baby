@@ -56,11 +56,12 @@
     <Compile Include="Assets\Scripts\Fighter.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Scene Managers\FightManager.cs" />
-    <Compile Include="Assets\Scripts\ButtonSelect.cs" />
-    <Compile Include="Assets\Scripts\Item.cs" />
-    <Compile Include="Assets\Scripts\LightningRattle.cs" />
     <Compile Include="Assets\Scripts\SonicDummy.cs" />
     <Compile Include="Assets\Scripts\DiaperODeath.cs" />
+    <Compile Include="Assets\Scripts\LightningRattle.cs" />
+    <Compile Include="Assets\Scripts\ButtonSelect.cs" />
+    <Compile Include="Assets\Scripts\Item.cs" />
+    <Compile Include="Assets\Scripts\EvilBaby.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
