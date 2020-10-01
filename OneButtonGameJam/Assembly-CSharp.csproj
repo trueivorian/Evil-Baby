@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\Fighter.cs" />
+    <Compile Include="Assets\Scripts\EvilBaby.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Scene Managers\FightManager.cs" />
     <Compile Include="Assets\Scripts\SonicDummy.cs" />
@@ -61,9 +62,9 @@
     <Compile Include="Assets\Scripts\LightningRattle.cs" />
     <Compile Include="Assets\Scripts\ButtonSelect.cs" />
     <Compile Include="Assets\Scripts\Item.cs" />
-    <Compile Include="Assets\Scripts\EvilBaby.cs" />
   </ItemGroup>
   <ItemGroup>
+     <None Include="Assets\Fonts\chock-a-block-nf\1001fonts-chock-a-block-nf-eula.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.1.6f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
