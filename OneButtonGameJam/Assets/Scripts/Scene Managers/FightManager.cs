@@ -42,7 +42,7 @@ public class FightManager : MonoBehaviour
         dialogue.GetComponent<Text>().text = "What will " + player.GetComponent<Player>().GetFighterName() + " do?";
         option1.GetComponent<Text>().text = "Fight";
         option2.GetComponent<Text>().text = "Toys";
-        option4.GetComponent<Text>().text = "Mum/Dad";
+        option4.GetComponent<Text>().text = "Mum + Dad";
         option3.GetComponent<Text>().text = "Crawl";
 
     }
