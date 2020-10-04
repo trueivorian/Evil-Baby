@@ -12,6 +12,7 @@ public class ButtonSelect : MonoBehaviour
     private int arrayLength;
     private GameObject selectedButton;
     private GameObject deselectedButton;
+    public bool userSelected = false;
 
 
 
@@ -22,7 +23,7 @@ public class ButtonSelect : MonoBehaviour
 
         for(int i=0; i<arrayLength; i++)
         {
-            buttons[i].GetComponent<Image>().color = new Color32(101, 170, 219, 255);
+            buttons[i].GetComponent<Image>().color = Color.white;
         }
 
         StartCoroutine(ButtonCycle());
@@ -61,15 +62,25 @@ public class ButtonSelect : MonoBehaviour
 
     private void ChangeButtonColour()
     {
-        selectedButton.GetComponent<Image>().color = new Color32(250, 203, 53, 255);
+        if(userSelected)
+        {
+            selectedButton.GetComponent<Image>().color = Color.green;
+        }
+        else
+        {
+            selectedButton.GetComponent<Image>().color = new Color32(255, 165, 0, 255);
+        }
+
         if (deselectedButton != null)
         {
-            deselectedButton.GetComponent<Image>().color = new Color32(101, 170, 219, 255);
+            deselectedButton.GetComponent<Image>().color = Color.white;
         }
+
     }
 
     public void ButtonPressed()
     {
+        userSelected = true;
         print(selectedButton);
         StopAllCoroutines();
     }

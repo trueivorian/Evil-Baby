@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public abstract class Fighter : MonoBehaviour
 {
     public enum Emotion { vhappy, happy, neutral, sad, vsad };
@@ -11,9 +10,22 @@ public abstract class Fighter : MonoBehaviour
     private float defence;
     private float health;
 
-    private Fighter.Emotion emotion = Fighter.Emotion.neutral;
+    private const int maxHealth = 100;
+    public HealthBar healthBar;
+
+
+    //private Fighter.Emotion emotion = Fighter.Emotion.neutral;
 
     public GameObject[] items;
+
+    private void Start()
+    {
+        health = maxHealth;
+        if(healthBar != null)
+        {
+            healthBar.SetMaxHealth(maxHealth);
+        }
+    }
 
     public void StartFighter()
     {
@@ -29,5 +41,17 @@ public abstract class Fighter : MonoBehaviour
 
         items = new GameObject[3];
         //items[0] = 
+
+        
     }
+
+    public void TakeDamage(float damage)
+    {
+        //we can add modifyers here according to emotion and the such 
+        health -= damage;
+        healthBar.SetHealth(health);
+    }
+
+
+
 }
