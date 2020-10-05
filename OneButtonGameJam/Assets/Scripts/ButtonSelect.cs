@@ -45,19 +45,19 @@ public class ButtonSelect : MonoBehaviour
 
     IEnumerator ButtonCycle()
     {
-
         for (int i = 0; i < arrayLength; i++)
         {
             selectedButton = buttons[i];
 
             yield return new WaitForSeconds(selectTime);
-            if(i == arrayLength-1 )
+            if (i == arrayLength - 1)
             {
                 i = -1;
             }
             deselectedButton = selectedButton;
 
         }
+
     }
 
     private void ChangeButtonColour()
@@ -83,6 +83,7 @@ public class ButtonSelect : MonoBehaviour
         userSelected = true;
         print(selectedButton);
         StopAllCoroutines();
+        
     }
 
 }
