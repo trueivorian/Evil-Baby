@@ -1,18 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Item : MonoBehaviour
+public abstract class Item : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float damage;
+
+    public Image icon;
+
+    public float GetDamage()
     {
-        
+        return damage;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

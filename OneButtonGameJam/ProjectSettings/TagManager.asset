@@ -5,6 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Option1
+  - Option2
+  - PlayerEmotion
+  - EnemyEmotion
+  - Option3
+  - Option4
+  - Dialogue
   layers:
   - Default
   - TransparentFX
